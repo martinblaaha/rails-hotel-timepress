@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Guests" %>
+
+<h1>Guests</h1>
+
+<table class="table table-light table-hover table-bordered">
+  <thead class="table-info">
+  <tr>
+    <th>Room</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th colspan="10"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @guests.each do |guest| %>
+    <tr>
+      <td><%= guest.room %></td>
+      <td>
+        <%= guest.first_name%>
+        <%= guest.last_name%>
+      </td>
+      <td><%= guest.email%></td>
+      <td><%= guest.phone%></td>
+      <td><%= link_to "View", guest %></td>
+      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+      <td><%= link_to "Delete", guest, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to "New guest", new_guest_path, class:"btn btn-success"%>
