@@ -11,28 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= form.number_field :room, class:"form-control", placeholder:"Room" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"Jan" %>
+    <br/>
   </div>
 
   <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Novak" %>
     <br/>
-    <%= form.submit class:"btn btn-success"%>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, class:"form-control", placeholder:"jan.novak@email.cz" %>
+    <br/>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone, class:"form-control", placeholder:"+420 123 456 789" %>
+    <br/>
+  </div>
+
+  <div>
+    <%= form.submit %>
   </div>
 <% end %>
