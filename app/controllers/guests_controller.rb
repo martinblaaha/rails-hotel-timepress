@@ -65,6 +65,6 @@ class GuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def guest_params
-      params.expect(guest: [ :room, :first_name, :last_name, :phone, :email ])
+      params.expect(guest: [ :id, :first_name, :last_name, :email, :phone ])
     end
 end

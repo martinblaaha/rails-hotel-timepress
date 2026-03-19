@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
     <%= link_to 'Hotel GRAND', root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,14 +6,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--       # button to list of hotel guests-->
         <li class="nav-item">
-          <%= link_to "About", home_about_path, class: "nav-link" %>
+          <%= link_to "Guests", guests_path, class: "nav-link" %>
         </li>
+<!--       # button to list of hotel rooms-->
         <li class="nav-item">
-          <%= link_to "Hotel Guests", guests_path, class: "nav-link" %>
+          <%= link_to "Rooms", rooms_path, class: "nav-link" %>
         </li>
+<!--       # button to list of reservations-->
         <li class="nav-item">
-          <%= link_to "Add Guest", new_guest_path, class: "nav-link" %>
+          <%= link_to "Reservations", reservations_path, class: "nav-link" %>
         </li>
       </ul>
     </div>
