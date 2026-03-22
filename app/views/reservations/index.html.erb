@@ -4,13 +4,31 @@
 
 <h1>Reservations</h1>
 
-<div id="reservations">
-  <% @reservations.each do |reservation| %>
-    <%= render reservation %>
-    <p>
-      <%= link_to "Show this reservation", reservation %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-light table-hover table-bordered">
+  <thead class="table-info">
+  <tr>
+    <th>Guest ID</th>
+    <th>Room</th>
+    <th>From</th>
+    <th>Until</th>
+    <th colspan="10"></th>
+  </tr>
+  </thead>
 
-<%= link_to "New reservation", new_reservation_path %>
+  <tbody>
+  <% @reservations.each do |reservation| %>
+    <tr>
+      <td><%= reservation.guest_id%></td>
+      <td><%= reservation.room_id%></td>
+      <td><%= reservation.start_date%></td>
+      <td><%= reservation.until_date%></td>
+      <td><%= link_to "View", reservation %></td>
+      <td><%= link_to "Edit", edit_reservation_path(reservation) %></td>
+      <td><%= link_to "Delete", reservation, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br/>
+
+<%= link_to "New reservation", new_reservation_path, class:"btn btn-success"%>

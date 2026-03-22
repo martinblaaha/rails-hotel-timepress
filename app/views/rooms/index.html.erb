@@ -4,13 +4,29 @@
 
 <h1>Rooms</h1>
 
-<div id="rooms">
-  <% @rooms.each do |room| %>
-    <%= render room %>
-    <p>
-      <%= link_to "Show this room", room %>
-    </p>
-  <% end %>
-</div>
+<table class="table table-light table-hover table-bordered">
+  <thead class="table-info">
+  <tr>
+    <th>Room number</th>
+    <th>Number of beds</th>
+    <th>Available</th>
+    <th colspan="10"></th>
+  </tr>
+  </thead>
 
-<%= link_to "New room", new_room_path %>
+  <tbody>
+  <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.room_number %></td>
+      <td><%= room.bed_count %></td>
+      <td><%= room.is_free ? "Yes" : "No" %></td>
+      <td><%= link_to "View", room %></td>
+      <td><%= link_to "Edit", edit_room_path(room) %></td>
+      <td><%= link_to "Delete", room, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br/>
+
+<%= link_to "New room", new_room_path, class:"btn btn-success"%>
