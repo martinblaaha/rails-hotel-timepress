@@ -64,10 +64,10 @@ class RoomsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    # def room_params
-    #   params.expect(room: [ :room_number, :bed_count, :is_free ])
-    # end
     def room_params
-      params.require(:room).permit(:room_number, :bed_count, :is_free)
+      params.expect(room: [ :room_number, :bed_count, :is_free ])
     end
+    # def room_params
+    #   params.require(:room).permit(:room_number, :bed_count, :is_free)
+    # end
 end

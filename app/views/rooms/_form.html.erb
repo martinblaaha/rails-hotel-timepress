@@ -15,24 +15,13 @@
     <%= form.label :room_number, style: "display: block" %>
     <%= form.number_field :room_number %>
   </div>
+  <br/>
 
   <div>
-    <%= form.label :bed_count, style: "display: block" %>
+    <%= form.label "Number of beds", style: "display: block" %>
     <%= form.number_field :bed_count %>
   </div>
-
-<!--  <div>-->
-    <%#= form.label "Available", style: "display: block" %>
-    <%#= form.checkbox :is_free %>
-<!--  </div>-->
-  <div class="form-check">
-    <%= form.radio_button :is_free, true, class: "form-check-input", id: "room_available", checked: true %>
-    <label class="form-check-label" for="room_available">Available</label>
-  </div>
-  <div class="form-check">
-    <%= form.radio_button :is_free, false, class: "form-check-input", id: "room_occupied" %>
-    <label class="form-check-label" for="room_occupied">Occupied</label>
-  </div>
+  <br/>
 
   <div>
     <%= form.submit %>

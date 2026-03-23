@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_22_203519) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_22_223630) do
   create_table "guests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "email", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_22_203519) do
   create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "bed_count", null: false
     t.datetime "created_at", null: false
-    t.boolean "is_free"
+    t.boolean "is_free", default: true
     t.integer "room_number", null: false
     t.datetime "updated_at", null: false
   end

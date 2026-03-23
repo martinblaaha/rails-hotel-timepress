@@ -15,21 +15,25 @@
     <%= form.label :start_date, style: "display: block" %>
     <%= form.datetime_field :start_date %>
   </div>
+  <br/>
 
   <div>
     <%= form.label :until_date, style: "display: block" %>
     <%= form.datetime_field :until_date %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.label "Guest ID", style: "display: block" %>
-    <%= form.text_field :guest_id %>
+  <div class="field">
+    <%= form.label :guest_id, "Guest" %>
+    <%= form.collection_select :guest_id, Guest.all, :id, :full_name, { prompt: "Select a guest..." }, { class: "form-control" } %>
   </div>
+  <br/>
 
-  <div>
-    <%= form.label :room_id, style: "display: block" %>
-    <%= form.text_field :room_id %>
+  <div class="field">
+    <%= form.label :room_id, "Room" %>
+    <%= form.collection_select :room_id, Room.all, :id, :room_number, { prompt: "Select a room..." }, { class: "form-control" } %>
   </div>
+  <br/>
 
   <div>
     <%= form.submit %>
