@@ -5,5 +5,5 @@
 <div>
   <%= link_to "Back", guests_path, class:"btn btn-secondary" %>
   <%= link_to "Edit", edit_guest_path(@guest), class:"btn btn-info" %>
-  <%= link_to "Delete", guests_path, class:"btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+  <%= link_to "Remove", guests_path, class:"btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
 </div>
